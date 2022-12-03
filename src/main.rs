@@ -13,7 +13,7 @@ fn subtract() -> i64 {
 
 #[cfg(test)]
 mod tests {
-    use crate::{adder, subtract};
+    use super::*;
 
     #[test]
     fn add_numbers() {
