@@ -6,7 +6,11 @@ fn adder(a: i64, b: i64) -> i64 {
     return a + b;
 }
 
-fn subtract() -> i64 {
+fn my_panic() {
+    panic!("oops...");
+}
+
+fn substract() -> i64 {
     // TODO: logic not yet implemented
     return 4;
 }
@@ -16,20 +20,20 @@ mod tests {
     use super::*;
 
     #[test]
-    fn add_numbers() {
+    fn test_adder() {
         assert_eq!(adder(2, 2), 4);
     }
 
     #[test]
-    #[should_panic(expected = "Make this test fail")]
-    fn failing_test() {
-        panic!("Make this test fail");
+    #[should_panic(expected = "oops...")]
+    fn test_my_panic() {
+        my_panic()
     }
 
     #[test]
     #[ignore]
-    fn subtract_numbers() {
+    fn test_substract() {
         // This test is ignored for now
-        assert_eq!(subtract(), 6);
+        assert_eq!(substract(), 6);
     }
 }
